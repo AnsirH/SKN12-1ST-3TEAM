@@ -2,15 +2,23 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com/?lines=전국자동차등록조회+시스템입니다!;지역별+자동차+등록정보를+조회해보세요!)](https://git.io/typing-svg)
 
+## 🖥️ 프로젝트
+
+### 📅 개발 기간
+- **2025.03.17-2025.03.18**
+
 🎯 목표 | 🚀 프로젝트 | 💡 아이디어 | 🏆 성과
 
 🎯 전국 자동차 등록 현황 및 FAQ 시스템 구현
 
-🚀 지역별 자동차 정보 조회 시스템
+🚀 지역별 자동차 등록 정보 조회 시스템
 
 💡 전국 자동차 등록 데이터를 이용하여 지역별 정보를 비교해보자!
 
 🏆 차종, 나이, 성별 기준, 두 지역의 자동차 등록 수 비교 결과 도출
+
+![홈페이지](https://private-user-images.githubusercontent.com/70016659/423833622-63bc271d-e907-4d66-af69-f4b1073c642c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDIyNzk3MjksIm5iZiI6MTc0MjI3OTQyOSwicGF0aCI6Ii83MDAxNjY1OS80MjM4MzM2MjItNjNiYzI3MWQtZTkwNy00ZDY2LWFmNjktZjRiMTA3M2M2NDJjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMTglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzE4VDA2MzAyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY1ZTJjMmJjOTJmNzdmZjc5YzNlMDYwODg2OWYxOTBjYmY2ZGFkNzRmZTZiZDM1ZTYzMTRiOGVhMTcxYmZlMzcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.5pp1Tu2QHirVFhJuiSU8QvP9eoj1T5ptEXSut31jFqQ)
+
 
 ## 🍀 팀원 소개
 
@@ -63,6 +71,8 @@
 </p>
 
 <br/><br/>
+
+
 
 # 한 줄 회고
 
