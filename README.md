@@ -1,6 +1,6 @@
 # SKN12-1ST-3TEAM
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=SK네트웍스+family+AI+캠프;12기_1차프로젝트_3팀)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=전국자동차등록조회+시스템입니다!;지역별+자동차+등록정보를+조회해보세요!)](https://git.io/typing-svg)
 
 🎯 목표 | 🚀 프로젝트 | 💡 아이디어 | 🏆 성과
 
