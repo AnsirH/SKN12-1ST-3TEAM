@@ -1,6 +1,6 @@
 # SKN12-1ST-3TEAM
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=전국자동차등록조회+시스템입니다!;지역별+자동차+등록정보를+조회해보세요!)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Welcom!;지역별+자동차+등록정보를+조회해보세요!)](https://git.io/typing-svg)
 
 # 🖥️ 프로젝트
 
