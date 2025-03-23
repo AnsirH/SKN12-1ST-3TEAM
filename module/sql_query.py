@@ -2,15 +2,21 @@ from mysql import connector
 from datetime import datetime
 import csv 
 import time 
+from module import config
 
 def import_dataset(args, year=None, month=None, day=1):
+    # 나중에 데이터를 업데이트 했을 경우 업데이트 기간을 수정 해주면 됨 
     try:
         conn = connector.connect(**args)
         cursor = conn.cursor() 
         nation_vehicles = []
+        input_date = datetime(year=year, month=month, day=day).strftime('%Y-%m-%d')
+        last_update_time = datetime(year=2025, month=2, day=1).strftime('%Y-%m-%d')
+        if input_date > last_update_time:
+            return None 
         
-        if (year is not None) and (month is not None): 
-            input_date = datetime(year=year, month=month, day=day).strftime('%Y-%m-%d')
+        elif (year is not None) and (month is not None): 
+           
             sql = """
                 SELECT vt.id, rn.city_do, rn.city_gun_gu,
                 vt.van, vt.sedan, vt.truck, vt.special,
@@ -18,7 +24,7 @@ def import_dataset(args, year=None, month=None, day=1):
                 FROM national_vehicle.vehicle_type vt  
                 JOIN national_vehicle.region_name rn 
                 ON vt.region_id = rn.id
-                WHERE vt.update_time BETWEEN '2024-01-01' AND %s;
+                WHERE vt.update_time BETWEEN '2024-01-01' AND %s
             """
             cursor.execute(sql, (input_date,))
         else:
@@ -186,7 +192,6 @@ def search_city_do_gender(args, city_do, gender = None):
 	            JOIN national_vehicle.region_name rn  on rn.id  = ga.region_id
 	            where rn.city_do  = %s and ga.gender = %s;"""
         cursor.execute(query, (city_do, gender))
-        time.sleep(2)
         result = cursor.fetchall()
         
     else: 
@@ -195,20 +200,12 @@ def search_city_do_gender(args, city_do, gender = None):
 	            JOIN national_vehicle.region_name rn  on rn.id  = ga.region_id
 	            where rn.city_do  = %s;"""
         cursor.execute(query, (city_do,))
-        time.sleep(2)
         result = cursor.fetchall()
     conn.close   
     cursor.close() 
     return result 
 
     
-if __name__ == '__main__':
-    args = {
-    'host' : 'localhost',
-    'user' : 'root',
-    'password' : 'root1234',
-    'port' : 3306
-    }
-    
-    insert_region(args) # 데이터가 없을 경우실행
-    insert_vehicle_type(args) # 데이터가 없을 경우실행
+if __name__ == '__main__':   
+    insert_region(config.DATABASE_CONFIG) # 데이터가 없을 경우실행
+    insert_vehicle_type(config.DATABASE_CONFIG) # 데이터가 없을 경우실행

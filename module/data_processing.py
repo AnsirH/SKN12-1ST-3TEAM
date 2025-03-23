@@ -2,14 +2,7 @@ import pandas as pd
 import openpyxl 
 # from sql_query import import_dataset
 from module.sql_query import import_dataset
-
-
-args = {
-    'host' : 'localhost',
-    'user' : 'root',
-    'password' : 'root1234',
-    'port' : 3306
-}
+from module import config
 
 # 광역시 합치기
 busan = ['중구','서구','동구','영도구','부산진구','동래구','남구','북구','해운대구','사하구','금정구','강서구','연제구','수영구','사상구','기장군']
@@ -43,7 +36,8 @@ def define_region(row):
 def processing_datafame(year, month):
     try: 
         # 데이터셋 가져오기
-        national_vehicles = import_dataset(args, year, month)
+        national_vehicles = import_dataset(config.DATABASE_CONFIG, year, month)
+        
         if len(national_vehicles) == 0:
             return None 
         
@@ -84,7 +78,7 @@ def processing_datafame(year, month):
 def merge_dataframe(year, month):
     try: 
         df_location = pd.read_excel('./data/korea_lat_lon.xlsx', engine='openpyxl')
-        national_vehicles = import_dataset(args, year, month)
+        national_vehicles = import_dataset(config.DATABASE_CONFIG, year, month)
         # 각행별로 총합 구하기 
         df_national_vehicles = pd.DataFrame(national_vehicles)
         df_national_vehicles['count'] = df_national_vehicles[['van', 'sedan', 'truck', 'special']].sum(axis= 1)

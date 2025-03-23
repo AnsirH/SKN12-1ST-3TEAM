@@ -8,6 +8,7 @@ import datetime
 from module.data_processing import *
 from module.sql_query import search_city_do_gender, get_vehicle_count
 import altair as alt
+from module import config
 
 # 작성자: 허한결결
 # 지역별 차종별 비교
@@ -15,14 +16,7 @@ def region_comparsion(year, month):
     try:
         car_type_col, col1, col2 = st.columns(3)
         # 데이터 쿼리 불러오기 
-        
-        args = {
-        'host' : 'localhost',
-        'user' : 'root',
-        'password' : 'root1234',
-        'port' : 3306
-        }
-        vehicle_data_list = get_vehicle_count(args, year, month)
+        vehicle_data_list = get_vehicle_count(config.DATABASE_CONFIG, year, month)
         vehicle_data_list.sort(key = lambda x : x['city_do'])
 
         data = {
@@ -70,16 +64,10 @@ def region_comparsion(year, month):
         st.write('조회결과가 없습니다.')
 
 def region_age_gendercomparsion(city_name, gender=None):
-    args = {
-    'host' : 'localhost',
-    'user' : 'root',
-    'password' : 'root1234',
-    'port' : 3306
-    }
     sns.set_style("whitegrid")
     sns.set_theme(font="AppleGothic")  # Seaborn에서 한글 폰트 적용
     colums = ['gender', 'age', 'registers']
-    df_city = pd.DataFrame(search_city_do_gender(args, city_name, gender), columns=colums)
+    df_city = pd.DataFrame(search_city_do_gender(config.DATABASE_CONFIG, city_name, gender), columns=colums)
     fig = plt.figure(figsize=(12, 9))
     # 선택된 도시 데이터의 선 그래프
     sns.barplot(x="age", y="registers", hue="gender", data=df_city)
