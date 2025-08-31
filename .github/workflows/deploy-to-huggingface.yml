@@ -35,7 +35,7 @@ jobs:
           fi
           
       - name: Deploy to Hugging Face Spaces
-        uses: huggingface/huggingface_hub@main
+        uses: huggingface/huggingface_hub@v0.1.0
         with:
           token: ${{ secrets.HF_TOKEN }}
           space: ${{ secrets.HF_SPACE }}
